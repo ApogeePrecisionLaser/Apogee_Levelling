@@ -56,7 +56,6 @@
         </div>
     </section>
 
-
     <section class="marginTop30 ">
         <div class="container organizationBox">
             <div class="headBox">
@@ -76,17 +75,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="beanType" items="${requestScope['list']}"
-                                       varStatus="loopCounter">
-                                <tr
-                                    onclick="fillColumn();">
-                                    <td>${loopCounter.count }</td>
-                                    <td id="${loopCounter.count }2">${beanType.organisation_id}</td>
-                                    <td id="${loopCounter.count }3">${beanType.organisation_name}</td>
-                                    <td id="${loopCounter.count }4">${beanType.description}</td>
-                                    <td id="${loopCounter.count }5">${beanType.organisation_code}</td>                                                
-                                </tr>
-                            </c:forEach>
+                                <c:forEach var="beanType" items="${requestScope['list']}"
+                                           varStatus="loopCounter">
+                                    <tr
+                                        onclick="fillColumn();">
+                                        <td>${loopCounter.count }</td>
+                                        <td id="${loopCounter.count }2">${beanType.organisation_id}</td>
+                                        <td id="${loopCounter.count }3">${beanType.organisation_name}</td>
+                                        <td id="${loopCounter.count }4">${beanType.description}</td>
+                                        <td id="${loopCounter.count }5">${beanType.organisation_code}</td>                                                
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -104,94 +103,67 @@
             <div class="headBox">
                 <h5 class="">Search Result</h5>
             </div>
-            <div class="row mt-3">
-                <div class="col-md-4">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="email">Organisation Type</label>
-                            <input type="text" class="form-control myInput" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="email">Organisation Name</label>
-                            <input type="text" class="form-control myInput" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="email">Organisation Code*</label>
-                            <input type="text" class="form-control myInput" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="email">Description</label>
-                            <textarea class="form-control myTextArea" disabled></textarea>
-                        </div>
-                    </div>
-                </div>
-<!--                <div class="col-md-4">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="email">Organisation Code*</label>
-                            <input type="text" class="form-control myInput" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="">
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Check Box
-                            </label>
-                        </div>
-
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" name="gender" type="radio"> Radio Box1
-                            </label>
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" name="gender" type="radio"> Radio Box2
-                            </label>
-                        </div>
-
+            <form name="form" method="POST" action="OrganizationNameController" onsubmit="">
+                <div class="row mt-3">
+                    <div class="col-md-4">
                         <div class="">
-                            <a href="#" class="hyperlink">Hyperlink >></a>
+                            <div class="form-group">
+                                <label for="email">Organization Type</label>
+                                <input type="text" class="form-control myInput" id="organization_type" name="organization_type">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group mb-0">
-                        <label for="email">Status</label>
-                        <select class="form-control mySelect" disabled>
-                            <option selected disabled>Select One</option>
-                            <option>Active Records</option>
-                            <option>Inactive Records</option>
-                            <option>All Records</option>
-                        </select>
+                    <div class="col-md-4">
+                        <div class="">
+                            <div class="form-group">
+                                <label for="email">Organization Name</label>
+                                <input type="text" class="form-control myInput" id="organization_name" name="organization_name">
+                            </div>
+                        </div>
                     </div>
-                </div>-->
-            </div>      
-            <hr>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="#" class="btn normalBtn">Edit</a>
-                    <a href="#" class="btn normalBtn">Save</a>
-                    <a href="#" class="btn normalBtn">New</a>
-                    <a href="#" class="btn normalBtn">Delete</a>
-                </div>
-            </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <div class="form-group">
+                                <label for="email">Organization Code*</label>
+                                <input type="text" class="form-control myInput" id="organization_code" name="organization_code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="form-group">
+                                <label for="email">Description</label>
+                                <textarea class="form-control myTextArea" id="description" name="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <div class="form-group">
+                                <label for="email">Remark</label>
+                                <input type="text" id="remark" name="remark" class="form-control myInput">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>      
+                <hr>
+                <div class="row">
+
+                    <c:if test="${not empty message}">
+                        <div class="col-md-12 text-center">
+                            <label style="color:${msgBgColor}"><b>Result: ${message}</b></label>
+                        </div>
+                    </c:if>
+
+                    <div class="col-md-12 text-center">
+                        <a href="#" class="btn normalBtn">Edit</a>
+                        <input class="btn normalBtn" type="submit" name="task" id="save" value="Save">
+                        <a href="#" class="btn normalBtn">New</a>
+                        <a href="#" class="btn normalBtn">Delete</a>
+                    </div>
         </div>
     </section>
 
 
-    <%@include file="../layout/footer.jsp" %>
+<%@include file="../layout/footer.jsp" %>
