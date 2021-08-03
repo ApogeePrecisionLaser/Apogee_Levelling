@@ -117,14 +117,21 @@ body {
 .table th, .table td {
     padding: 7px 0.75rem;
 }
-.myTable #example_paginate a {
-    background-color: #000;
+.myTable #mytable_paginate a {
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: #000;
+    margin: 3px;
+    border: 1px solid #000
+}
+.myTable #mytable_paginate a.current {
     padding: 4px 12px;
     border-radius: 4px;
     color: #fff;
-    margin:3px;
+    margin: 3px;
+    background-color: #000;
 }
-.myTable #example_previous, #example_next {
+.myTable #mytable_previous, #mytable_next {
     background-color: transparent!important;
     color: #000!important;
     border:1px solid #000;
@@ -146,7 +153,7 @@ body {
     float: right;
     margin-bottom: 10px;
 }
-.myTable #example_paginate{
+.myTable #mytable_paginate{
     margin-top:14px;
 }
 .hyperlink:hover{

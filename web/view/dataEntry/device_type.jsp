@@ -192,9 +192,9 @@ a:hover{
     </head>
     <body>
         <table align="center" cellpadding="0" cellspacing="0" class="main">
-         <tr><td><%@include file="/layout/header.jsp" %></td></tr>
+         <tr><td><%@include file="../layout/header.jsp" %></td></tr>
             <tr>
-                <td><%@include file="/layout/menu.jsp" %> </td>
+
             </tr>
             <td>
                 <DIV id="body" class="maindiv" align="center" >
@@ -342,7 +342,7 @@ a:hover{
 
                 </DIV>
             </td>
-            <tr><td><%@include file="/layout/footer.jsp" %></td> </tr>
+        
         </table>
 
 

@@ -67,7 +67,7 @@ public class OrganisationNameModel {
     public List<OrganisationNameBean> showData() {
         List<OrganisationNameBean> list = new ArrayList<OrganisationNameBean>();
         
-        String query = " select * from organisation_name where active='Y' limit 5 ";
+        String query = " select * from organisation_name where active='Y' ";
         try {
             //System.out.println("query  -" + query2);
             int count = 0;
