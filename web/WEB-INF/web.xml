@@ -28,12 +28,12 @@
     </context-param>
     
     <servlet>
-        <servlet-name>OrganisationNameController</servlet-name>
+        <servlet-name>OrganizationNameController</servlet-name>
         <servlet-class>com.organization.controller.OrganisationNameController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>OrganisationNameController</servlet-name>
-        <url-pattern>/OrganisationNameController</url-pattern>
+        <servlet-name>OrganizationNameController</servlet-name>
+        <url-pattern>/OrganizationNameController</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>organization_name</servlet-name>

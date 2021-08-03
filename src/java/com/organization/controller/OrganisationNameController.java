@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.json.simple.JSONObject;
 
-
 /**
  *
  * @author Vikrant
@@ -39,11 +38,29 @@ public class OrganisationNameController extends HttpServlet {
         model.setDb_username(ctx.getInitParameter("db_user_name"));
         model.setDb_password(ctx.getInitParameter("db_user_password"));
         model.setConnection();
+        String task = request.getParameter("task");
+        if (task == null) {
+            task = "";
+        }
         try {
-            
+
+            OrganisationNameBean bean = new OrganisationNameBean();
+            bean.setOrganisation_type(request.getParameter("organization_type"));
+            bean.setOrganisation_name(request.getParameter("organization_name"));
+            bean.setOrganisation_code(request.getParameter("organization_code"));
+            bean.setDescription(request.getParameter("description"));
+            bean.setRemark(request.getParameter("remark"));
+
+            if (task.equals("Save")) {
+                int data = model.saveData(bean);
+            }
+
             List<OrganisationNameBean> list = model.showData();
             request.setAttribute("list", list);
             
+            System.err.println("message ----"+model.getMessage());
+            request.setAttribute("message", model.getMessage());
+            request.setAttribute("msgBgColor", model.getMsgBgColor());
             request.getRequestDispatcher("organization_name").forward(request, response);
         } catch (Exception ex) {
             System.out.println("OrganisationNameController error: " + ex);
